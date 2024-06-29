@@ -80,10 +80,11 @@ nav {
   background-color:white;
 }
 
+
 header {
-  background-color: rgb(67, 46, 146);
-  margin: 1rem;
-  border-radius: 2rem;
+  /* background-color: rgb(67, 46, 146); */
+  /* margin: 1rem; */
+  /* border-radius: 2rem; */
 }
 
 
@@ -96,6 +97,11 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 50px;
+  background-color: #4841b2;
+  border-radius: 2rem;
+  padding: 0rem 0 3rem 1rem;
+  margin: 0 auto 2rem auto;
+  overflow: hidden;
 }
 
 
@@ -119,7 +125,7 @@ header {
 
 .heading__1 {
   font-weight: 700;
-  color: green;
+  color: #b3e861;
 }
 
 
@@ -186,6 +192,7 @@ header {
   display: flex;
   align-items: center;
   margin-top: 100px;
+  margin-left: 1rem;
 }
 
 .content__image {
@@ -394,6 +401,7 @@ font-weight: 900;
   margin-right: 5px;
 }
 
+
 .clients p{
   font-size: 12px;
 }
@@ -406,6 +414,7 @@ font-weight: 900;
   background-color: #ffffff; 
   margin: 20px 0; 
   width: 100%;
+  width: calc(100% + 40px);
 }
 
 
@@ -452,14 +461,14 @@ font-weight: 900;
 
   
   header {
-    margin: 1rem 0; 
-    padding-bottom: 2rem; 
-    overflow: hidden; 
+    /* margin: 1rem 0;  */
+    /* padding-bottom: 2rem;  */
+    /* overflow: hidden;  */
   }
 
   .header__container {
     grid-template-columns: 1fr; 
-    gap: 20px; 
+    gap: 20px;
   }
 
   
