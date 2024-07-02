@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+
+.body-wrapper{
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 a {
   text-decoration: none;
 }
@@ -76,21 +82,68 @@ nav {
   color: blue;
 }
 
-.nav__menu__btn {
+.nav__burger-btn{
   display: none;
-  font-size: 1.5rem;
-  color: black;
-}
-
-.nav__menu__btn {
-  display: none;
-  font-size: 1.5rem;
-  color: black;
-  cursor: pointer;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border:none;
+  outline: none;
 }
 
 
+.nav__burger-btn span{
+display: block;
+position: absolute;
+width: 30px;
+height: 3px;
+right: 5px;
+background-color:black;
+transition: transform 0.3s;
+will-change: transform;
+z-index: 2;
+cursor: pointer;
+}
 
+.nav__burger-btn:hover span{
+background-color:#4841b2;
+}
+
+.nav__burger-btn span:nth-child(1){
+ 
+  transform: translateY(-10px);
+}
+
+
+
+
+
+.nav__burger-btn span:nth-child(3){
+ 
+  transform: translateY(10px);
+}
+
+
+/* Крестик */
+
+
+
+.header.open .nav__burger-btn span:nth-child(1){
+ 
+  transform: translateY(0px) rotate(45deg);
+}
+
+
+.header.open .nav__burger-btn span:nth-child(2){
+opacity: 0;
+}
+
+
+.header.open .nav__burger-btn span:nth-child(3){
+ 
+  transform: translateY(0px) rotate(-45deg);
+}
 
 .btn {
   padding: 0.75rem 2rem;
@@ -452,65 +505,45 @@ font-weight: 900;
 
 
 @media (max-width: 1024px) {
-  nav {
-    position: fixed;
-    width: 100%;
-    padding: 1rem;
-    background-color:white;
-    z-index: 99;
-  }
+.btn{
+  display: none;
+}
+.nav__burger-btn{
+display: block;
+}
 
-  .nav__links {
-    position: absolute;
-    left: 0;
-    top: 68px;
-    padding: 2rem;
-    width: 100%;
-    flex-direction: column;
-    transform: scaleY(0);
-    transform-origin: top;
-    transition: 0.5s;
-    background-color: purple;
-  }
+.nav__links{
+  display: block;
+  position: absolute;
+  right: -250px;
+  top: 0;
+  width: 250px;
+  padding: 15px;
+ background-color:blueviolet;
+ opacity: 0.9;
+ visibility: hidden;
+ transition: transform 0.5s, visibility 0.5s;
+}
 
-  .nav__links .link a {
-    opacity: 0;
-  }
+.header.open .nav__links{
+  transform: translateX(-100%);
+  visibility: visible;
+}
 
-  .nav__links.open .link a {
-    opacity: 1;
-  } 
 
-  .nav__links.open {
-    transform: scaleY(1);
-  }
 
-  .nav__menu__btn {
-    display: block;
-  }
-  .btn {
-    display: none; 
-  }
+.link{
+  padding: 10px;
+  margin: 0;
+}
+.link a{
+  display: block;
+  color:white;
+  font-size: 21px;
+  padding: 0;
+}
 
-  .burger-menu {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    cursor: pointer;
-    position: relative;
-    z-index: 1000;
-  }
 
-  .burger-menu__line {
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    transition: all 0.3s ease;
-  }
-
-  
   .image__container {
     order: -1;
     text-align: center;
